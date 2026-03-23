@@ -3,8 +3,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://mongo:27017/randomdb';
+const PORT = 3001;
+const MONGO_URI = 'mongodb://mongo:27017/randomdb';
 
 // MongoDB schema and model
 const randomSchema = new mongoose.Schema({
