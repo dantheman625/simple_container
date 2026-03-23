@@ -129,6 +129,7 @@
     const result = document.getElementById('result');
     const numberDisplay = document.getElementById('numberDisplay');
     const status = document.getElementById('status');
+    const apiUrl = `${window.location.protocol}//${window.location.hostname}:3001/random`;
 
     getNumberBtn.addEventListener('click', async () => {
       getNumberBtn.disabled = true;
@@ -137,8 +138,7 @@
       result.style.display = 'block';
 
       try {
-        // use service name when running in Docker Compose network
-        const response = await fetch('http://api-app:3001/random', {
+        const response = await fetch(apiUrl, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
