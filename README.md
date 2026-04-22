@@ -2,6 +2,8 @@
 
 A demo application with two Node.js services running in Docker containers:
 
+Configuration is externalized using service-specific `.env` files and loaded by Docker Compose via `env_file`.
+
 ## Services
 
 ### Web App (Port 3000)
@@ -73,12 +75,14 @@ docker-compose down
 simple_container/
 ├── web-app/
 │   ├── Dockerfile
+│   ├── .env
 │   ├── package.json
 │   ├── server.js
 │   └── public/
 │       └── index.html
 ├── api-app/
 │   ├── Dockerfile
+│   ├── .env
 │   ├── package.json
 │   └── server.js
 └── docker-compose.yml

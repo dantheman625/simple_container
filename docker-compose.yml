@@ -1,42 +1,47 @@
-version: '3.8'
+version: "3.8"
 
 services:
   web-app:
+    container_name: web-app
     build:
       context: ./web-app
       dockerfile: Dockerfile
+    env_file:
+      - ./web-app/.env
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - api-app
     networks:
       - app-network
-
   api-app:
+    container_name: api-app
     build:
       context: ./api-app
       dockerfile: Dockerfile
+    env_file:
+      - ./api-app/.env
     ports:
-      - "3001:3001"
+      - 3001:3001
     depends_on:
       - mongo
     networks:
       - app-network
-
   mongo:
+    container_name: mongo
+    ports:
+      - 27017:27017
     image: mongo:6.0
     restart: unless-stopped
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
     networks:
       - app-network
-
-volumes:
-  mongo-data:
-    driver: local
+    volumes:
+      - mongo-data:/data/db
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
