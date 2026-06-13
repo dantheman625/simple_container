@@ -1,0 +1,10 @@
+{
+  "name": "sensor-driver",
+  "version": "1.0.0",
+  "description": "Native (non-containerized) driver simulating a physical temperature sensor on the edge device. Part of the physical/Integration layer, intentionally outside the container view.",
+  "main": "driver.js",
+  "scripts": {
+    "start": "node driver.js"
+  },
+  "dependencies": {}
+}

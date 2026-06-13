@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Number Generator</title>
+  <title>Temperature Monitor</title>
   <style>
     * {
       margin: 0;
@@ -112,13 +112,13 @@
 </head>
 <body>
   <div class="container">
-    <h1>🎲 Random Number Generator</h1>
-    <p>Click the button below to get a random number from the API</p>
+    <h1>🌡️ Temperature Monitor</h1>
+    <p>Click the button below to get the current sensor reading from the API</p>
 
-    <button id="getNumberBtn">Get Random Number</button>
+    <button id="getNumberBtn">Get Reading</button>
 
     <div class="result" id="result" style="display: none;">
-      <div class="result-label">Random Number</div>
+      <div class="result-label">Temperature (°C)</div>
       <div class="result-number" id="numberDisplay">-</div>
       <div id="status"></div>
     </div>
